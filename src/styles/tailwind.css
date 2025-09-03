@@ -5,8 +5,6 @@
 @import "tailwindcss-animated";
 @import "tailwindcss-intersect";
 
-/* --- Lokale Pragmatica fonte --- */
-
 /* Normal Pragmatica (regular) */
 @font-face {
   font-family: "Pragmatica";
@@ -34,6 +32,9 @@
   /* Typografi */
   --font-sans: "Pragmatica", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Pragmatica Extended", "Pragmatica", ui-sans-serif, system-ui, sans-serif;
+}
+body {
+  background-color: var(--color-background);
 }
 
 @layer base {
