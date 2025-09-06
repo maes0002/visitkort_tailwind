@@ -6,9 +6,10 @@ const currentPath = pathname.slice(1);
   [x-cloak] { display: none !important; }
 </style>
 
-<header x-data="{ showmenu: false }" class="relative z-50 bg-secondary-400">
+<header x-data="{ showmenu: false }" class="fixed inset-x-0 top-0 z-50 bg-transparent"> <!--absolute gør, at headeren tages ud af flowet → den ligger ovenpå som et “lag” og optager derfor ingen plads.-->
+
   <div class="max-w-[1200px] mx-auto p-4 flex items-center justify-end">
-    <!-- Knappen ligger altid over menuen -->
+    <!-- Burger/kryds-knap -->
     <button id="menuToggle"
             class="ml-auto z-50 relative"
             aria-controls="menu"
@@ -28,26 +29,36 @@ const currentPath = pathname.slice(1);
     </button>
   </div>
 
-  <!-- Fullscreen overlay menu (ligger under knappen pga. lavere z) -->
-  <nav id="menu"
-       class="fixed inset-0 bg-secondary-400 z-40 flex flex-col items-center justify-center"
-       x-show="showmenu"
-       x-transition:enter="transition ease-out duration-500"
-       x-transition:enter-start="opacity-0"
-       x-transition:enter-end="opacity-100"
-       x-transition:leave="transition ease-in duration-300"
-       x-transition:leave-start="opacity-100"
-       x-transition:leave-end="opacity-0"
-       x-on:click.outside="showmenu = false">
+  <!-- Fullscreen overlay menu -->
+<nav id="menu"
+     class="fixed inset-0 z-40"
+     :class="showmenu ? 'pointer-events-auto' : 'pointer-events-none'">
+
+  <!-- Baggrund (fade ind/ud langsomt) -->
+  <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+       :class="showmenu ? 'opacity-100 bg-[var(--color-background)]' : 'opacity-0 bg-[var(--color-background)]'"
+       @click="showmenu = false">
+  </div>
+
+  <!-- Panel der glider ned over hele skærmen -->
+  <div class="absolute top-0 left-0 w-full h-full
+              flex items-center justify-center
+              transition-transform duration-1000 ease-in-out
+              -translate-y-full"
+       :class="showmenu ? 'translate-y-0' : '-translate-y-full'">
+
     <ul class="space-y-6 text-2xl">
       <li class="text-center">
-        <a href="/" class={currentPath === "" ? "font-bold underline" : ""} x-on:click="showmenu = false">Forside</a>
+        <a href="/" class={currentPath === "" ? "font-bold underline" : ""} @click="showmenu = false">Forside</a>
       </li>
       <li class="text-center">
-        <a href="/komponentbibliotek/" class={currentPath === "komponentbibliotek/" ? "font-bold underline" : ""} x-on:click="showmenu = false">
+        <a href="/komponentbibliotek/" class={currentPath === 'komponentbibliotek/' ? 'font-bold underline' : ''} @click="showmenu = false">
           Komponentbibliotek
         </a>
       </li>
     </ul>
-  </nav>
+
+  </div>
+</nav>
+
 </header>
