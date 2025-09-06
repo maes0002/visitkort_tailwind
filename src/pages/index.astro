@@ -1,8 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
+import Text from "../components/Text.astro"; 
+
 ---
 <MainLayout title="Titel">
 <article class="gap-8 flex flex-col">
@@ -20,35 +20,35 @@ import thumbsup from "../assets/images/thumbsup.png";
     <div class="grid grid-cols-2 gap-x-1 gap-y-1 text-white max-w-md w-full mx-auto">
 
       <!-- Navn -->
-      <p class="font-display text-xl uppercase">Maja</p>
-      <p class="font-display text-xl uppercase text-right">Estrup</p>
+      <Text stylingclasses="font-display text-xl uppercase">Maja</Text>
+      <Text stylingclasses="font-display text-xl uppercase text-right">Estrup</Text>
 
       <!-- Titel -->
-      <p class="font-display text-xl uppercase">Multi</p>
-      <p class="font-display text-xl uppercase text-right">Media</p>
+      <Text stylingclasses="font-display text-xl uppercase">Multi Media</Text>
+      <Text stylingclasses="font-display text-xl uppercase text-right">Design</Text>
 
       <!-- Kontakt info -->
-      <p class="font-display text-xl uppercase">Tel</p>
-      <p class="font-display text-xl uppercase text-right">+45 60628785</p>
+      <Text stylingclasses="font-display text-xl uppercase">Tel</Text>
+      <Text stylingclasses="font-display text-xl uppercase text-right">+45 60628785</Text>
 
-      <p class="font-display text-xl uppercase">Lip</p>
-      <p class="font-display text-xl uppercase text-right">Maja Estrup</p>
+      <Text stylingclasses="font-display text-xl uppercase">Lip</Text>
+      <Text stylingclasses="font-display text-xl uppercase text-right">Maja Estrup</Text>
 
-      <p class="font-display text-xl uppercase">Web</p>
-      <p class="font-display text-xl uppercase text-right">EstrupLabs</p>
+      <Text stylingclasses="font-display text-xl uppercase">Web</Text>
+      <Text stylingclasses="font-display text-xl uppercase text-right">EstrupLabs</Text>
 
       <!-- Adresseblok -->
       <div class="col-span-2 mt-4 space-y-1">
-        <p class="font-display text-xl uppercase">Office</p>
+        <Text stylingclasses="font-display text-xl uppercase">Office</Text>
         <div class="grid grid-cols-2 gap-x-8">
-          <p class="font-display text-xl uppercase">Christian</p>
-          <p class="font-display text-xl uppercase text-right">Ix Gade</p>
+          <Text stylingclasses="font-display text-xl uppercase">Christian</Text>
+          <Text stylingclasses="font-display text-xl uppercase text-right">Ix Gade</Text>
 
-          <p class="font-display text-xl uppercase">1, 3rd –</p>
-          <p class="font-display text-xl uppercase text-right">4th Floor</p>
+          <Text stylingclasses="font-display text-xl uppercase">1, 3rd –</Text>
+          <Text stylingclasses="font-display text-xl uppercase text-right">4th Floor</Text>
 
-          <p class="font-display text-xl uppercase">1111</p>
-          <p class="font-display text-xl uppercase text-right">Copenhagen</p>
+          <Text stylingclasses="font-display text-xl uppercase">1111</Text>
+          <Text stylingclasses="font-display text-xl uppercase text-right">Copenhagen</Text>
         </div>
       </div>
     </div>
@@ -68,43 +68,63 @@ import thumbsup from "../assets/images/thumbsup.png";
     <img src="/images/img_8.webp" alt="" class="w-full h-full object-cover filter grayscale hover:grayscale-0" />
   </div>
 </section>
+
 <section class="border-t border-r border-black border-solid px-4 py-6">
   <div class="flex justify-end">
     <div class="flex flex-col items-end max-w-lg space-y-4">
       <h1 class="text-right">APPROACH</h1>
-      <p class="text-left">User-focused__ Collaborative__ Visual and aesthetic sense__
-      Trend-aware & curious__ Unique designs__ Versatile__ 
-      Adaptable__ Multifaced__ Dynamic__ Flexible__ Innovative__
-      Inquisitive__  Open-minded__ Cross-functional__ Progressive__
-      </p>
+      <Text stylingclasses="text-left">
+        User-focused__ Collaborative__ Visual and aesthetic sense__
+        Trend-aware & curious__ Unique designs__ Versatile__ 
+        Adaptable__ Multifaced__ Dynamic__ Flexible__ Innovative__
+        Inquisitive__  Open-minded__ Cross-functional__ Progressive__
+      </Text>
 
       <h1 class="text-right">ASPIRATIONS</h1>
-      <p class="text-left">To collaborate with leading media agencies and contribute to the development of high-impact campaigns; design visual communications such as posters, newsletters, and engaging social media content; stay consistently informed about emerging trends and integrate them into daily creative work; and, in the long term, build and lead a successful creative agency that combines innovative design with strategic vision.</p>
+      <Text stylingclasses="text-left">
+        To collaborate with leading media agencies and contribute to the development of high-impact campaigns; design visual communications such as posters, newsletters, and engaging social media content; stay consistently informed about emerging trends and integrate them into daily creative work; and, in the long term, build and lead a successful creative agency that combines innovative design with strategic vision.
+      </Text>
       
       <h1 class="text-right">LANGUAGES</h1>
-      <p class="text-left">
+      <Text stylingclasses="text-left">
         Danish__ Native <br>English__ Fluent <br>Spanish_ Basic
-      </p>
+      </Text>
     </div>
   </div>
 </section>
-<section class="border-l border-b border-black border-solid px-4 py-6">
-<div class="flex">
-	<div class="flex flex-col max-w-lg space-y-4">
-		<h1>SKILLS</h1>
-		<p>
-			HTML__ CSS__ JavaScript__GitHub__Adobe Creative Suite__Figma__
-UX/UI Design Principles__Visual Identity Design__
-Concept Development__Content Creation / Content Production__
-		</p>
-	</div>
-</div>
+
+<section class="border-l border-b border-black border-solid px-4 pt-6">
+  <div class="grid grid-cols-2">
+    <!-- Tekst øverst til venstre -->
+    <div class="flex flex-col justify-start">
+      <h1>SKILLS</h1>
+      <Text>
+        HTML__ CSS__ JavaScript__ GitHub__ Adobe Creative Suite__ Figma__<br>
+        UX/UI Design Principles__ Visual Identity Design__<br>
+        Concept Development__ Content Creation / Content Production__
+      </Text>
+    </div>
+    <!-- Billede nederst til højre -->
+    <div class="flex items-end justify-end">
+      <img src="/svg/skills.svg" alt="" class="" />
+    </div>
+  </div>
 </section>
-<section></section>
+
+<section class="justify-center items-center text-center space-y-4 px-4 py-40">
+  <Link href="https://www.instagram.com/majaestrup7/" target="_blank" variant="textlink" size="default">
+    Instagram
+  </Link>
+  <Link href="https://www.linkedin.com/in/maja-estrup-503344922/" target="_blank" variant="textlink" size="default">
+    LinkedIn
+  </Link>
+  <Link href="https://pin.it/3PHrHbW" target="_blank" variant="textlink" size="default">
+    Pinterest
+  </Link>
+  <Link href="https://www.tiktok.com/@mybabyai7is_from_webapp" target="_blank" variant="textlink" size="default">
+    TikTok
+  </Link>
+</section>
 
 </article>
-		
-		<!-- <p>Til <Link href="/komponentbibliotek">komponentbiblioteket</Link></p>
-		<Image src={thumbsup} alt=""></Image> -->
-	
 </MainLayout>
